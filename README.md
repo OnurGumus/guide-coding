@@ -4,6 +4,8 @@
 
 You write the code. AI guides you, one step at a time.
 
+![Guide Coding in VS Code: type a goal, get a plan of small steps, write each step yourself, and the AI reviews your attempt](https://raw.githubusercontent.com/OnurGumus/guide-coding/main/images/guide-coding-demo.gif)
+
 Guide Coding is a VS Code extension that plans a coding task with the model of your choice and then walks you through it. It does not write the code for you. Each step shows up in the editor, right where the code belongs: what to do, why, and where.
 
 - **The human writes, the AI guides.** The model plans, explains, hints and reviews. You type.

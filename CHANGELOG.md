@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.2 (preview)
+
+- **A short demo on the listing:** an animation at the top of the page shows a task from goal to plan to a checked step.
+
 ## 0.4.1 (preview)
 
 - **Claude Max and Team credits:** a tip in the README and in the Anthropic key box: these plans include monthly API credits, claimed by linking a Claude Console organization, and a key from that organization works here.
