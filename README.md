@@ -35,8 +35,35 @@ Guide Coding runs on your own model account. On first run, choose **Choose provi
 
 - **Anthropic with Claude Max or Team.** Have Claude Max or Team? Your plan includes monthly API credits (Max 5x $100, Max 20x $200, Team up to $500 pooled). Claim them in claude.ai under Settings → Billing by linking a Claude Console organization, create an API key in that organization, and choose Anthropic. (Pro, Free and Enterprise plans don't include these credits.) [Details](https://support.claude.com/en/articles/17154008-api-credits-for-max-and-team-plans).
 - **Ollama and context length.** Ollama's default context is 4k tokens on machines with less than 24 GiB of VRAM, and it silently cuts long prompts from the front. Guide Coding needs at least 32k. Raise it with the Ollama app's context slider, or set `OLLAMA_CONTEXT_LENGTH` (64k, `65536`, is a good choice for coding tools). Pick a model that can call tools, for example `ollama pull qwen3-coder`.
-- **A custom endpoint.** Set `guide.baseUrl` (HTTPS, or plain HTTP only to `localhost` or `127.0.0.1`) and `guide.apiShape` (`openai` or `anthropic`), then choose `custom`. Leave the key box empty if the endpoint takes no key (LM Studio, for one). Nothing is ever sent over plain HTTP to another machine.
 - **Cost.** For a model whose price is known (Anthropic's, DeepSeek's) the cost is shown in dollars, and the task pauses at `guide.maxTaskCostUsd` (default 5). For any other model, each turn's tokens are written to the log instead.
+
+### A custom endpoint
+
+Any server that speaks the OpenAI Chat Completions API or Anthropic's Messages API works. Add three settings to your user settings (**Preferences: Open User Settings (JSON)**), then run **Guide: Choose model provider** and pick **Custom endpoint**:
+
+- `guide.baseUrl`: the API's base address. For the `openai` shape it ends just before `/chat/completions`, usually with `/v1`; for the `anthropic` shape it ends just before `/v1/messages`. It must be HTTPS, or plain HTTP only to `localhost` or `127.0.0.1`: nothing is ever sent over plain HTTP to another machine.
+- `guide.apiShape`: `openai` or `anthropic`.
+- `guide.model`: the model's id exactly as the endpoint names it. Pick a model that can call tools: the guide works through tool calls.
+
+A local model in LM Studio, with no key, so nothing leaves your machine (start LM Studio's server, and copy the model's API identifier from its Developer tab):
+
+```json
+"guide.baseUrl": "http://localhost:1234/v1",
+"guide.apiShape": "openai",
+"guide.model": "qwen/qwen3-coder-30b"
+```
+
+Leave the key box empty when it asks.
+
+A hosted OpenAI-compatible service, Groq for example:
+
+```json
+"guide.baseUrl": "https://api.groq.com/openai/v1",
+"guide.apiShape": "openai",
+"guide.model": "<a model id from Groq's model list>"
+```
+
+Paste the service's key when asked; it is stored in your keychain and sent only to that host. The cost of a custom endpoint is not shown in dollars: each turn's tokens are written to the log instead.
 
 ### Your key, safely
 

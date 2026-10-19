@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.4 (preview)
+
+- **Custom endpoints, by example:** the README shows what each setting means and two worked examples, a local model in LM Studio and a hosted OpenAI-compatible service.
+
 ## 0.4.3 (preview)
 
 - **Your key, safely:** the README says up front where your API key is kept and where it goes, how to give Guide Coding a key of its own with a spending cap, and that you can try it with no key through Ollama.
