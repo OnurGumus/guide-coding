@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.5.0 (preview)
+
+- **Review a branch:** the new **Review** view walks you through what a branch adds over a base, in a reading order the model proposes: milestones of steps, every change in exactly one step. Each step opens as a file or a diff, with what it does, why, and what's worth a closer look. It starts from the intent: add the PR description or ticket, and the review opens with what the change sets out to do and where the code differs. Checks on choices that may be deliberate are questions for the author, and one click drafts them as `question:` comments for you to edit. Mark steps reviewed, comment on any line (with `question:`, `issue:` or `nit:` labels), and export your comments as Markdown for the PR. Read-only: git is only run to read, and generated, binary and protected files are never sent to the model.
+- **Skeleton first:** a plan now maps the shape of the work before filling it in: the types and signatures, then the failing tests (one test per step), then the implementations, then the wiring, so you see the architecture early. Steps are small, about 15 lines; in Learn mode a step over 30 lines is refused and split.
+- **A step can delete lines:** a step can now replace or remove a whole range, and Preview and Apply refuse an edit that would change nothing, instead of showing an empty diff.
+- **Nothing left out:** a step whose location hint asks for something its code doesn't add (an import, say) is refused and split, so Apply never skips an edit.
+- **Answers first:** a remark in Ask is treated as a question and answered before anything else; a fix is shown as code for you to type.
+- **Comments you can skim:** the code the model suggests carries short, plain comments, and a step's shape covers everything its code adds.
+- **When nothing is wrong:** after **Something's wrong with this step…**, the model can report that it found nothing to fix, with its reason, and you can describe the problem again or carry on. A turn that fails now says what the model said and offers **Retry**.
+
 ## 0.4.4 (preview)
 
 - **Custom endpoints, by example:** the README shows what each setting means and two worked examples, a local model in LM Studio and a hosted OpenAI-compatible service.

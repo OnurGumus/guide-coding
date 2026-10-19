@@ -94,6 +94,21 @@ You own the plan: edit, skip, reorder, add and delete steps, and the model adapt
 
 Switch any time from the Guide Coding view's title bar, or with the `guide.mode` setting.
 
+## Review a branch
+
+PRs have got too big to review well. **Review** reads what a branch adds over a base, proposes an order to read it in, and walks you through it. It helps you understand the change; you do the judging. It's read-only: it never writes to your files or your repository.
+
+1. Check out the branch (for a GitHub PR, `gh pr checkout 123`), then choose **Start a review** in the **Review** view, under Plan.
+2. Pick the base: the default branch is offered first, or enter any branch, tag or commit. The review covers what the branch adds over it, like a PR. Uncommitted changes aren't included.
+3. **Start from the intent.** Optionally add the PR description or ticket, from the clipboard or typed. The review opens with what the change sets out to do, and where the code does more, or less, than the description says.
+4. The model groups the changes into **milestones** of **steps** in reading order: types and contracts first, then the code, the callers and the tests, with mechanical changes such as renames on their own. Every change is in exactly one step, so nothing is skipped by accident.
+5. **Each step opens where its code is:** as a file when it only adds code (the new lines marked in green), as a diff when it changes or removes lines. **Open as diff / Open as file** switches.
+6. **The balloon** says what the part does and why, and up to three specific things worth a closer look, each at `file:line`. Where a choice may be deliberate, a check is a question for the author, not a verdict, and **✎ Draft as a question** turns it into a `question:` comment for you to edit. Ask the model about the step, or save a note as a comment on it.
+7. **Mark reviewed** moves on to the next step, and the view counts what you've covered (`12/31 steps · 640/2,300 lines reviewed`).
+8. **Comment on any line** with the comment "+" in the gutter, on either side of a diff. Start a comment with `question:`, `issue:` or `nit:` to label it. **Export review** opens your comments as Markdown, ready to paste into the PR. Nothing is posted anywhere.
+
+Reviews are kept per branch, so you can stop and come back. When the branch gets new commits, **Review the new commits** reviews just those. Generated files (lockfiles, `dist/`, minified files), binary files and protected files such as `.env` are listed for you, but never sent to the model. Git is only ever run to read: Guide Coding never fetches, checks out or commits.
+
 ## Privacy
 
 Guide Coding collects nothing and sends nothing to its author; it has no telemetry. Your goal, the files the model reads, the diff of your changes when you Check, and your messages go only to the model provider you chose, under that provider's terms (with Ollama they stay on your machine). The model can read your workspace but cannot change it: only your Apply and Create file write, and a path guard keeps it out of anything outside the folder and secrets such as `.env*`, `*.pem` and `.ssh`. Your keys live in your keychain, and the task and its conversation in VS Code's workspace storage on your machine. Read the full [PRIVACY.md](PRIVACY.md); the terms of use are in the [EULA.md](EULA.md).
