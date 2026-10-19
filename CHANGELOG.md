@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.5.1 (preview)
+
+- **Scaffolding first:** a plan for a new project, or a folder with no project yet, starts with the solution, the project files and the test project, before any code file, so every step has a project to go into and builds.
+- **A panel that lost the extension says so:** VS Code restarts the extension when the window switches workspaces, and a Task panel left open from before is no longer connected, so Reply did nothing. Now the panel says so within 10 s and asks you to reopen it from the Plan view. The model no longer suggests opening another folder or a multi-root workspace to reach files outside the workspace (the task is kept per workspace); it asks you to copy them in.
+
 ## 0.5.0 (preview)
 
 - **Review a branch:** the new **Review** view walks you through what a branch adds over a base, in a reading order the model proposes: milestones of steps, every change in exactly one step. Each step opens as a file or a diff, with what it does, why, and what's worth a closer look. It starts from the intent: add the PR description or ticket, and the review opens with what the change sets out to do and where the code differs. Checks on choices that may be deliberate are questions for the author, and one click drafts them as `question:` comments for you to edit. Mark steps reviewed, comment on any line (with `question:`, `issue:` or `nit:` labels), and export your comments as Markdown for the PR. Read-only: git is only run to read, and generated, binary and protected files are never sent to the model.
