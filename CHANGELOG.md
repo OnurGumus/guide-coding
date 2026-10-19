@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.1 (preview)
+
+- **Claude Max and Team credits:** a tip in the README and in the Anthropic key box: these plans include monthly API credits, claimed by linking a Claude Console organization, and a key from that organization works here.
+- **Listing link:** the Install section now links to the real Marketplace listing (Open VSX: coming soon).
+- **Clearer icon:** the text cursor in the icon is now a plain bar, so it no longer reads as a capital "I" at small sizes.
+
 ## 0.4.0 (preview)
 
 The first Marketplace release, as **Guide Coding** (`novian.guide-coding`). The earlier `guide-preview` package was a local-only preview, so there is nothing to migrate: install this one.
