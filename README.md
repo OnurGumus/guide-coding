@@ -12,7 +12,9 @@ Guide Coding is a VS Code extension that plans a coding task with the model of y
 - **Understanding is the goal.** You finish a task knowing why the code is the way it is, not only holding code that works.
 - **Generating code is a choice, not the default.** Show code, Preview and Apply are there when you want them, one level at a time.
 
-> **Preview.** Guide Coding is an early release (0.4.1). It works, but expect rough edges. Please [tell us what breaks](#feedback).
+Your API key stays in your operating system's keychain and goes only to the provider you pick; nothing is sent to us. Want to try it without a key? Use a local model through Ollama, and nothing leaves your machine.
+
+> **Preview.** Guide Coding is an early release. It works, but expect rough edges. Please [tell us what breaks](#feedback).
 
 ## Install
 
@@ -35,7 +37,12 @@ Guide Coding runs on your own model account. On first run, choose **Choose provi
 - **Ollama and context length.** Ollama's default context is 4k tokens on machines with less than 24 GiB of VRAM, and it silently cuts long prompts from the front. Guide Coding needs at least 32k. Raise it with the Ollama app's context slider, or set `OLLAMA_CONTEXT_LENGTH` (64k, `65536`, is a good choice for coding tools). Pick a model that can call tools, for example `ollama pull qwen3-coder`.
 - **A custom endpoint.** Set `guide.baseUrl` (HTTPS, or plain HTTP only to `localhost` or `127.0.0.1`) and `guide.apiShape` (`openai` or `anthropic`), then choose `custom`. Leave the key box empty if the endpoint takes no key (LM Studio, for one). Nothing is ever sent over plain HTTP to another machine.
 - **Cost.** For a model whose price is known (Anthropic's, DeepSeek's) the cost is shown in dollars, and the task pauses at `guide.maxTaskCostUsd` (default 5). For any other model, each turn's tokens are written to the log instead.
-- **Keys** are stored one per provider and are sent only to their own provider. **Guide: Set API key** and **Guide: Clear API key** manage them.
+
+### Your key, safely
+
+- **Where it lives.** Keys are stored in your operating system's keychain (VS Code's secret storage), one per provider, and each is sent only to its own provider. Guide Coding has no server of its own and no telemetry.
+- **Give it a key of its own, with a cap.** Create a key just for Guide Coding and limit what it can spend: DeepSeek is prepaid, so your balance is the cap; OpenRouter keys take a credit limit; Anthropic Console workspaces and OpenAI projects take spend limits. Revoke the key at your provider whenever you like.
+- **Change or remove it.** **Guide: Set API key** replaces a key, and **Guide: Clear API key** deletes it from the keychain.
 
 ## Your first task
 

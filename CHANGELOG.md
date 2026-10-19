@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.3 (preview)
+
+- **Your key, safely:** the README says up front where your API key is kept and where it goes, how to give Guide Coding a key of its own with a spending cap, and that you can try it with no key through Ollama.
+
 ## 0.4.2 (preview)
 
 - **A short demo on the listing:** an animation at the top of the page shows a task from goal to plan to a checked step.
