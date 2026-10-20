@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.5.2 (preview)
+
+- **A design brief before the steps:** every task, and every milestone of a big one, starts with a short design brief in the Task panel: why it exists, the interfaces as signature-only snippets, a sequence diagram of the calls it adds, the planned steps with a one-line why each, and the trade-offs (pros, cons, and the alternative it rejected). Ask about it or ask for a change in its reply box; the model answers and revises it. **✓ Plan the steps** plans from the brief you approved.
+- **When the code and the brief part ways:** if you ask for another design mid-milestone, or a change of plan, a fix or your own code departs from the brief, the model revises it and holds the steps. **✓ Re-plan the remaining steps** plans every unfinished step again from the code the done steps produced; **Keep the previous brief** carries on. **Compare with previous** shows both.
+- **Syntax highlighting in your theme:** the brief's snippets and fenced code in the model's panel text are highlighted with VS Code's grammars, in your colour theme, and re-coloured when you switch themes.
+- **One chat per step:** a step's questions and answers are one comment in its balloon, older exchanges folded. **Enter** sends a question (Shift+Enter starts a new line), and the reply box keeps only **Ask**. With VS Code's `comments.maxHeight` off, balloons grow and the editor follows the chat; the first answer offers once to turn it off.
+- **↩ Unapply:** after Apply, ↩ Unapply puts the file back as it was (a file Apply created goes) and leaves the step to do. It refuses once you've edited the file since, so your edits are never lost.
+- **Done asks first:** ✓ Works, next step and ✓ Done ask "Move on from step N?" before the step is finished.
+- **Code in tooltips:** `code` in the Plan view's tooltips shows as code; nothing else in them is Markdown.
+
 ## 0.5.1 (preview)
 
 - **Scaffolding first:** a plan for a new project, or a folder with no project yet, starts with the solution, the project files and the test project, before any code file, so every step has a project to go into and builds.
