@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.3 (preview)
+
+- **Imports come with the step:** an `open`, `using` or `import` the step's code needs is no longer a step of its own. The step brings it, the balloon lists it above the shape and the code, and Apply adds it with the file's other imports (after a multi-line import, under a `module`, `namespace` or `package` line, below a Python docstring), together with the code, in one edit Undo or ↩ Unapply takes back. Imports the file already has are left out. For F#, C#, TypeScript, JavaScript, Python, Java, Kotlin, Scala and Rust.
+
 ## 0.5.2 (preview)
 
 - **A design brief before the steps:** every task, and every milestone of a big one, starts with a short design brief in the Task panel: why it exists, the interfaces as signature-only snippets, a sequence diagram of the calls it adds, the planned steps with a one-line why each, and the trade-offs (pros, cons, and the alternative it rejected). Ask about it or ask for a change in its reply box; the model answers and revises it. **✓ Plan the steps** plans from the brief you approved.
