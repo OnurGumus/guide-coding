@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.6.8 (preview)
+
+- **Clearer review start:** starting a review now asks "What to review (1 of 2)", then "What it's for (2 of 2, optional)", and each choice says what it means.
+  - **Last commit only** is the first choice, showing that commit's message.
+  - **Since a branch, tag or commit…** gives examples, such as `HEAD~3` for the last 3 commits.
+  - The second question says it's optional and doesn't change which commits are reviewed.
+
 ## 0.6.7 (preview)
 
 - **A review step's diff shows only that step's changes:** when one file's changes are split across several steps, each step's diff shows only its own. The other steps' changes show as ordinary unchanged lines, and the tab title says "step 3 only".
