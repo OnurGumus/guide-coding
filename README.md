@@ -32,10 +32,21 @@ Guide Coding runs on your own model account. On first run, choose **Choose provi
 | `openrouter` | openrouter.ai, and the vendor of the model you pick | an OpenRouter key; you pick the model at setup |
 | `ollama` | nowhere: the model runs on your machine (localhost:11434) | no key; you pick one of your installed models |
 | `custom` | the endpoint in `guide.baseUrl` | optional: a local server such as LM Studio takes no key |
+| `claudeCodeCli` | Anthropic, through your own Claude Code | Claude Code installed and signed in: your Claude plan or a key ([below](#claude-code-your-installation)) |
 
 - **Anthropic with Claude Max or Team.** Have Claude Max or Team? Your plan includes monthly API credits (Max 5x $100, Max 20x $200, Team up to $500 pooled). Claim them in claude.ai under Settings → Billing by linking a Claude Console organization, create an API key in that organization, and choose Anthropic. (Pro, Free and Enterprise plans don't include these credits.) [Details](https://support.claude.com/en/articles/17154008-api-credits-for-max-and-team-plans).
 - **Ollama and context length.** Ollama's default context is 4k tokens on machines with less than 24 GiB of VRAM, and it silently cuts long prompts from the front. Guide Coding needs at least 32k. Raise it with the Ollama app's context slider, or set `OLLAMA_CONTEXT_LENGTH` (64k, `65536`, is a good choice for coding tools). Pick a model that can call tools, for example `ollama pull qwen3-coder`.
 - **Cost.** For a model whose price is known (Anthropic's, DeepSeek's) the cost is shown in dollars, and the task pauses at `guide.maxTaskCostUsd` (default 5). For any other model, each turn's tokens are written to the log instead.
+
+### Claude Code (your installation)
+
+Have Claude Code installed? Pick **Claude Code (your installation)**, and Guide Coding runs your own `claude`, unmodified, with whatever it is signed in to: your Claude plan or an API key.
+
+- **What it needs.** Claude Code 2.1.265 or later, installed with the [native installer](https://code.claude.com/docs/en/setup). On Windows that is the native `claude.exe`, not npm's `claude.cmd`. Sign in in a terminal: run `claude`, then `/login`. If it lives somewhere unusual, set `guide.claudeCode.path`.
+- **Guide Coding stores no credentials.** It has no login of its own and never reads Claude Code's sign-in; Claude Code signs in as it always does. Anthropic bills the usage to the account Claude Code uses.
+- **A plan shows tokens.** On a Claude plan the panel shows tokens, and a step's tooltip shows the API-equivalent cost, which is an estimate, not a charge. The budget doesn't pause the task.
+- **An API key in your environment.** If `ANTHROPIC_API_KEY` is set, Guide Coding leaves it out by default so that your plan is used (`guide.claudeCode.anthropicApiKey` is `ignore`). Set it to `use` to bill the key instead: costs then show in dollars, and the budget applies.
+- **Your Claude Code settings apply.** Your permissions, deny rules and hooks work as they do in Claude Code, and Guide Coding's read-only guard comes on top. Your plugins run too; if they pull the guidance off course, set `guide.claudeCode.plugins` to `false`.
 
 ### A custom endpoint
 
@@ -111,13 +122,13 @@ Reviews are kept per branch, so you can stop and come back. When the branch gets
 
 ## Privacy
 
-Guide Coding collects nothing and sends nothing to its author; it has no telemetry. Your goal, the files the model reads, the diff of your changes when you Check, and your messages go only to the model provider you chose, under that provider's terms (with Ollama they stay on your machine). The model can read your workspace but cannot change it: only your Apply and Create file write, and a path guard keeps it out of anything outside the folder and secrets such as `.env*`, `*.pem` and `.ssh`. Your keys live in your keychain, and the task and its conversation in VS Code's workspace storage on your machine. Read the full [PRIVACY.md](PRIVACY.md); the terms of use are in the [EULA.md](EULA.md).
+Guide Coding collects nothing and sends nothing to its author; it has no telemetry. Your goal, the files the model reads, the diff of your changes when you Check, and your messages go only to the model provider you chose, under that provider's terms (with Ollama they stay on your machine; with Claude Code (your installation), to Anthropic through your own Claude Code, under your account's terms). The model can read your workspace but cannot change it: only your Apply and Create file write, and a path guard keeps it out of anything outside the folder and secrets such as `.env*`, `*.pem` and `.ssh`. Your keys live in your keychain, and the task and its conversation in VS Code's workspace storage on your machine. Read the full [PRIVACY.md](PRIVACY.md); the terms of use are in the [EULA.md](EULA.md).
 
 ## Requirements
 
 - VS Code 1.101.2 or later (desktop).
 - A folder you trust, opened in VS Code. Untrusted and virtual workspaces are not supported, because the model reads your files.
-- An API key for one of the providers above, or a local model through Ollama.
+- An API key for one of the providers above, a local model through Ollama, or Claude Code signed in on this machine.
 
 ## Feedback
 

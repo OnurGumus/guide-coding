@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.6.0 (preview)
+
+- **Claude Code (your installation):** a new provider that runs your own Claude Code, unmodified, with whatever it is signed in to: your Claude plan or an API key.
+  - **Setup:** pick it with **Guide: Choose model provider**. Guide Coding has no login of its own and stores no credentials; sign in to Claude Code in a terminal with `claude`, then `/login`. It needs Claude Code 2.1.265 or later, from the native installer.
+  - **Read-only:** Guide Coding's guard keeps the session read-only on top of your own Claude Code settings, deny rules and hooks, which keep applying. A turn whose tool calls are refused several messages in a row is stopped with a message saying why.
+  - **Cost:** on a Claude plan the panel shows tokens, and a step's tooltip shows the API-equivalent cost, an estimate rather than a charge. On an API key or a cloud provider (Amazon Bedrock, Google Cloud Vertex AI, Microsoft Foundry), costs show in dollars and the budget applies. The panel says who is billed.
+  - **Settings:** `guide.claudeCode.path` if `claude` lives somewhere unusual; `guide.claudeCode.anthropicApiKey` (`ignore` by default, so a stray `ANTHROPIC_API_KEY` doesn't bill you); `guide.claudeCode.plugins` to turn your Claude Code plugins off for guide sessions.
+- **A model switch is safer:** a task that moves to a provider that bills you shows dollars and pauses at its budget again.
+
 ## 0.5.3 (preview)
 
 - **Imports come with the step:** an `open`, `using` or `import` the step's code needs is no longer a step of its own. The step brings it, the balloon lists it above the shape and the code, and Apply adds it with the file's other imports (after a multi-line import, under a `module`, `namespace` or `package` line, below a Python docstring), together with the code, in one edit Undo or ↩ Unapply takes back. Imports the file already has are left out. For F#, C#, TypeScript, JavaScript, Python, Java, Kotlin, Scala and Rust.
