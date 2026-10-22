@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.6.2 (preview)
+
+- **Nothing you typed is lost before planning:** on the design brief, if you've typed a reply but not sent it, **✓ Plan the steps** (or **Re-plan**) asks first: **Send it first**, or **Plan without it**. Before, the typed text was silently ignored.
+- **Open questions get an answer in the open:** when you choose **Make the plan** with questions left unanswered, the model now picks the simplest answer for each and lists it with the plan's assumptions ("Q: … → assumed: …"), so you can see and correct it before approving the brief. A note under **Make the plan** says how many are open.
+- **A sent brief reply no longer stays in the reply box.**
+
 ## 0.6.1 (preview)
 
 - **Start from a Claude Code conversation:** with Claude Code (your installation), the New task panel's **Start from** lists this folder's Claude Code conversations, including those of its other git worktrees (marked), newest first. Each shows its title, or its first prompt. The task continues from a copy of the one you pick, so the guide knows what you already worked out; the conversation itself is never changed. Large conversations are marked. It's on by default; turn it off with `guide.claudeCode.extras`.
