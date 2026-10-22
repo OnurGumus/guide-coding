@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.6.5 (preview)
+
+- **Apply & check my work:** right-click the current step in the plan to apply it and have it checked in one click, without opening the balloon. If the step can't be applied, nothing is checked.
+- **Plainer writing:** the model now writes the brief and the step balloons the way a colleague would explain them. It says what a change does first, uses short sentences and explains unfamiliar names. The brief's **Why** starts with what you'll have once the milestone is done.
+- **How much was cached:** the token count now shows the cached share of the input, e.g. `500k in (470k cached) · 1.3k out`. Cached input costs about a tenth of fresh input.
+
 ## 0.6.4 (preview)
 
 - **One change, several places:** a step that makes the same change in several places of one file (a string renamed at each use) is now one step that covers them all. Before, **Apply** changed only the first place.
