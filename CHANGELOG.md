@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.6.3 (preview)
+
+- **Saving a key offers to switch:** **Guide: Set API key** now asks "Which provider's API key?". If you save a key for a provider you aren't using, it asks whether to use that provider now. It never switches without your click.
+- **Tidier Claude Code (your installation):**
+  - A long system prompt's temporary file is cleaned up after a crash.
+  - Listing your conversations no longer waits on a slow `git worktree list` (5 s at most).
+- **Upgrades keep their usage:** tasks saved before 0.6.0 keep loading, and token counts are kept across restarts.
+
 ## 0.6.2 (preview)
 
 - **Nothing you typed is lost before planning:** on the design brief, if you've typed a reply but not sent it, **✓ Plan the steps** (or **Re-plan**) asks first: **Send it first**, or **Plan without it**. Before, the typed text was silently ignored.
