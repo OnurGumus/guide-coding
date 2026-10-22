@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.6.6 (preview)
+
+- **A more thorough review:** the model now looks for bugs first in each step. It reads the code around the change and the callers it affects, and tries the empty, failing and boundary cases.
+  - Each step can now list up to 6 things worth checking instead of 3, most serious first. Before, anything past the third was lost.
+  - A problem between two steps counts too, such as a test that doesn't cover the code it's for.
+  - No step holds more than about 400 changed lines unless it's a single hunk, so a big file is read in several steps instead of one.
+
 ## 0.6.5 (preview)
 
 - **Apply & check my work:** right-click the current step in the plan to apply it and have it checked in one click, without opening the balloon. If the step can't be applied, nothing is checked.
