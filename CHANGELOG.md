@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.6.7 (preview)
+
+- **A review step's diff shows only that step's changes:** when one file's changes are split across several steps, each step's diff shows only its own. The other steps' changes show as ordinary unchanged lines, and the tab title says "step 3 only".
+  - The step's comment box says where else the file changes, for example "also changes in step 5", with a link to that step.
+  - **⇄ All changes in this file** switches to the full diff, and back.
+
 ## 0.6.6 (preview)
 
 - **A more thorough review:** the model now looks for bugs first in each step. It reads the code around the change and the callers it affects, and tries the empty, failing and boundary cases.
