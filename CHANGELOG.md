@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.6.4 (preview)
+
+- **One change, several places:** a step that makes the same change in several places of one file (a string renamed at each use) is now one step that covers them all. Before, **Apply** changed only the first place.
+  - **Show code** lists every place, **Preview** shows them all, **Apply** makes them all, and **↩ Unapply** takes them all back.
+  - If one of the places changed since the step was proposed, Apply says which one, and **Re-locate** finds every place again.
+
 ## 0.6.3 (preview)
 
 - **Saving a key offers to switch:** **Guide: Set API key** now asks "Which provider's API key?". If you save a key for a provider you aren't using, it asks whether to use that provider now. It never switches without your click.
