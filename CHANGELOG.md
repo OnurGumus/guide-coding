@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.1 (preview)
+
+- **Start from a Claude Code conversation:** with Claude Code (your installation), the New task panel's **Start from** lists this folder's Claude Code conversations, including those of its other git worktrees (marked), newest first. Each shows its title, or its first prompt. The task continues from a copy of the one you pick, so the guide knows what you already worked out; the conversation itself is never changed. Large conversations are marked. It's on by default; turn it off with `guide.claudeCode.extras`.
+
 ## 0.6.0 (preview)
 
 - **Claude Code (your installation):** a new provider that runs your own Claude Code, unmodified, with whatever it is signed in to: your Claude plan or an API key.

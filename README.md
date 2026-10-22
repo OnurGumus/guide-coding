@@ -46,6 +46,7 @@ Have Claude Code installed? Pick **Claude Code (your installation)**, and Guide 
 - **Guide Coding stores no credentials.** It has no login of its own and never reads Claude Code's sign-in; Claude Code signs in as it always does. Anthropic bills the usage to the account Claude Code uses.
 - **A plan shows tokens.** On a Claude plan the panel shows tokens, and a step's tooltip shows the API-equivalent cost, which is an estimate, not a charge. The budget doesn't pause the task.
 - **An API key in your environment.** If `ANTHROPIC_API_KEY` is set, Guide Coding leaves it out by default so that your plan is used (`guide.claudeCode.anthropicApiKey` is `ignore`). Set it to `use` to bill the key instead: costs then show in dollars, and the budget applies.
+- **Start from a Claude Code conversation.** In the New task panel, **Start from** lists this folder's Claude Code conversations, its other git worktrees' included (marked), newest first. The task continues from a copy of the one you pick, so the guide knows what you already worked out; the conversation itself is never changed. Turn it off with `guide.claudeCode.extras`.
 - **Your Claude Code settings apply.** Your permissions, deny rules and hooks work as they do in Claude Code, and Guide Coding's read-only guard comes on top. Your plugins run too; if they pull the guidance off course, set `guide.claudeCode.plugins` to `false`.
 
 ### A custom endpoint
