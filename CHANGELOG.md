@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.7.2 (preview)
+
+- **Show the big picture on every milestone:** the button is now on every milestone in the Review view. A milestone without a diagram still opens its page, which says the model found no new or changed calls in it.
+- **Fix:** the milestone page listed its steps from 2 (or another number) when earlier milestones had steps. Each step now says its number in the review, as in "Step 2/24".
+
 ## 0.7.1 (preview)
 
 - **The big picture in a review:** a milestone that adds or changes calls between parts of the code can now have a sequence diagram of those calls, drawn by the model from the change.
