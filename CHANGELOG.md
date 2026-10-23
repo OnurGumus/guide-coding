@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.4 (preview)
+
+- **The advisor in any turn:** with Claude Code (your installation), the model can now ask the advisor whenever it needs something your project doesn't have, such as a ticket from Jira, while planning a step, writing a brief or checking your work, not only while discussing the goal. You still approve each tool call it makes.
+
 ## 0.7.3 (preview)
 
 - **Review uncommitted changes:** "What to review" now offers **Uncommitted changes only** when you have some. It reviews your staged and unstaged edits and new files on their own, never mixed with commits.
