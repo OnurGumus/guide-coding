@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.7.3 (preview)
+
+- **Review uncommitted changes:** "What to review" now offers **Uncommitted changes only** when you have some. It reviews your staged and unstaged edits and new files on their own, never mixed with commits.
+  - The review works from a saved copy of the changes, so it stays put while you keep editing. Your files, staging area, branches and stash are left as they are.
+- **The advisor, with Claude Code (your installation):** while you discuss a goal, the model can ask the advisor to look something up with your own MCP servers and claude.ai connectors, such as your issue tracker or wiki. Turn it on with `guide.claudeCode.extras` and `guide.advisor.enabled`.
+  - You approve each tool call it wants to make.
+  - It has no built-in tools, and it runs in an empty temporary folder outside your project, so it can't see your files.
+  - Its cost and tokens count toward the task's totals.
+
 ## 0.7.2 (preview)
 
 - **Show the big picture on every milestone:** the button is now on every milestone in the Review view. A milestone without a diagram still opens its page, which says the model found no new or changed calls in it.
