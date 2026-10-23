@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.7.0 (preview)
+
+- **A cleaner review:**
+  - Code in the step's comment box gets your theme's code colour, and **Why** and **Worth checking** have icons.
+  - Concerns are numbered, with short places like `Form.fs:42`, and **Draft a question** links name those numbers.
+  - The step's title shows once, in the header.
+  - Long text is no longer cut off with "…".
+  - The Review view's summary is one line, and **What it sets out to do** is the first item in the list. Click it to open **About this review**, which shows that text in full, with your PR description and the commits.
+- **Fix:** a starting point typed as `head~2` (lowercase) now counts from HEAD, like `HEAD~2`.
+
 ## 0.6.8 (preview)
 
 - **Clearer review start:** starting a review now asks "What to review (1 of 2)", then "What it's for (2 of 2, optional)", and each choice says what it means.
