@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.7.1 (preview)
+
+- **The big picture in a review:** a milestone that adds or changes calls between parts of the code can now have a sequence diagram of those calls, drawn by the model from the change.
+  - **Show the big picture** (the button on the milestone in the Review view) opens the milestone's page: its summary, the diagram and its steps. Each of its steps' comment boxes links to it too.
+  - **About this review** shows every milestone's diagram.
+  - It's the model's reading of the change, so check it against the code.
+- **What a review has used:** the Review view's summary shows the review's cost when you pay per token, or its tokens on a Claude plan. Each step's tooltip shows what that step used.
+- **Fix:** Sonnet 5.5's cache reads were counted at twice their price ($0.20 per million instead of $0.10).
+
 ## 0.7.0 (preview)
 
 - **A cleaner review:**
