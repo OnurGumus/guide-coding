@@ -1,6 +1,6 @@
 # Guide Coding
 
-**No more vibe coding. Enter Guide Coding.**
+**Stop Vibe Coding, enter Guide Coding.**
 
 You write the code. AI guides you, one step at a time.
 
