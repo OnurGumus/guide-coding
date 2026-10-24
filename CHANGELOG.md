@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1
+
+- **A release, not a pre-release:** 1.0.0 was still packaged as a pre-release, so VS Code and the Marketplace called it one. 1.0.1 is the same Guide Coding as a release. If VS Code keeps you on pre-releases, choose **Switch to Release Version** on the extension's page.
+
 ## 1.0.0
 
 **Stop Vibe Coding, enter Guide Coding.** Guide Coding is out of preview.
