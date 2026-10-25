@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.2
+
+- **Apply & check remaining steps:** right-click the current milestone or step in the Plan view (or use the Command Palette), and Guide Coding works through the milestone for you: it applies each step's code as soon as the model proposes it, checks it, and moves on to the next. The step and its milestone show "applying & checking" while it runs.
+  - It stops at the checkpoint, and as soon as something needs you: a check that doesn't pass or finds no changes (the notice names the step), an Apply that fails, an error, a budget pause or a revised design brief.
+  - Anything you do yourself also stops it: Apply, Check, asking the model, Done, or editing or skipping a step. **Stop apply & check** ends it at any time. A restart never resumes a run.
+- **Text boxes keep their size:** a text box in the Task panel (the goal, a reply, the design brief's reply) that you made taller stays that tall when the panel is hidden and shown again.
+
 ## 1.0.1
 
 - **A release, not a pre-release:** 1.0.0 was still packaged as a pre-release, so VS Code and the Marketplace called it one. 1.0.1 is the same Guide Coding as a release. If VS Code keeps you on pre-releases, choose **Switch to Release Version** on the extension's page.
