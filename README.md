@@ -100,6 +100,10 @@ You own the plan: edit, skip, reorder, add and delete steps, and the model adapt
 - **Split step** replaces the current step with smaller ones.
 - **Finish later** keeps your stub for now; a later step finishes it.
 
+### Epics, for bigger goals
+
+When a goal holds several separate features, or would take more than one session, tick **Epic: split it into tasks** when you start. After the discussion, the model writes an **epic brief**, with a diagram of how the parts fit together and the tasks that build them. Once you approve it, the tasks run one at a time, each an ordinary task in a fresh session. At the end of each task, the model writes a **handoff** for the tasks after it, and **Start task N** opens the next one. You own the task list just as you own the steps: edit, move, skip or add tasks in the Plan view.
+
 ### Learn or Control
 
 - **Learn** (the default) explains first: why the step is needed, how it works, where it goes.

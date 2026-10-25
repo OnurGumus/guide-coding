@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.4
+
+- **Epics, for goals bigger than one task:** tick **Epic: split it into tasks** when you start. After the discussion, the model writes an **epic brief**: how the parts fit together, drawn as a component diagram, and 2–12 tasks, each one that runs end to end. Reply to it to change it, then **✓ Approve & start task 1**.
+  - Each task is an ordinary task, with its own discussion, milestones, briefs and steps, in a **fresh session**. Its discussion starts from the epic brief and what the earlier tasks left.
+  - When a task's last milestone works, the model writes a **handoff**: what it built, the interfaces later tasks rely on, and notes. It may adjust the tasks still to come. **▶ Start task N** opens the next one. After the last task, the page shows the epic's cost in all.
+  - The Plan view lists the tasks (`Task 1 · Auth`), with the current task's milestones and steps under it. Right-click a task to edit, add, move, skip or delete it, or to put a skipped one back. Skipping the task you're on asks first.
+  - **Stop** on an epic in progress asks first, and ends the whole epic.
+
 ## 1.0.3
 
 - **What's worth checking, in one place:** **Collect what's worth checking** (a button in the Review view's title bar, or the Command Palette) reads every step not read yet, one after another, and opens the **Worth checking** page: the model's checks and your comments, milestone by milestone and step by step, each with its `file:line`. The page fills in as each read finishes, and a step not yet read says whether it is being read, paused at the budget or failed.
