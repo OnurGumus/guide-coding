@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.3
+
+- **What's worth checking, in one place:** **Collect what's worth checking** (a button in the Review view's title bar, or the Command Palette) reads every step not read yet, one after another, and opens the **Worth checking** page: the model's checks and your comments, milestone by milestone and step by step, each with its `file:line`. The page fills in as each read finishes, and a step not yet read says whether it is being read, paused at the budget or failed.
+  - Questions you ask meanwhile are answered first. **Stop the review's turn** ends collecting, and a restart doesn't resume it.
+  - **Copy what's worth checking** copies the page as Markdown, as far as it has got, ready to paste into the PR. The button is also on the Markdown preview's title bar.
+- **Each milestone page ends with what's worth checking** in its steps. When a milestone has no diagram but has checks or comments, a step's balloon links to that list.
+- **About, milestone and Worth checking pages stay current:** an open page refreshes as reads finish and comments change.
+
 ## 1.0.2
 
 - **Apply & check remaining steps:** right-click the current milestone or step in the Plan view (or use the Command Palette), and Guide Coding works through the milestone for you: it applies each step's code as soon as the model proposes it, checks it, and moves on to the next. The step and its milestone show "applying & checking" while it runs.
