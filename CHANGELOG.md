@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.7
+
+- **Summarize the review:** **Summarize the review** (a button in the Review view's title bar, or the Command Palette) reads every step not read yet, then closes the review with a summary. It goes at the top of the **Worth checking** page and of **Export review**:
+  - **Worth raising:** 1–3 things to comment on, most important first.
+  - **Every finding**, once: findings that share a cause, even across steps, become one that names the cause and lists its steps.
+  - **Dormant:** one note for the findings in code no environment runs yet.
+- **Checks say how much they matter:** a step's balloon groups its checks under **Likely to break**, **Worth asking** and **Minor**. A check the base already had is marked *already there*, and one behind a flag that's off everywhere *dormant*. The Worth checking page shows the same marks.
+- **The model reads the code before the change** to tell a new problem from one that was already there.
+
 ## 1.0.6
 
 - **Review checks the other end of new calls:** when the change uses something it doesn't define, such as a function, a message or command name, a JSON field or a test helper, the model looks it up, even outside the change, and flags it if it doesn't exist or doesn't do what the code expects. This matters most for tests: a test whose helper doesn't exist can time out with a misleading message, or pass without testing anything.
