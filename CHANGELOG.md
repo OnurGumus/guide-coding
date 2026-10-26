@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.5
+
+- **Look back at an epic:** click a finished or skipped task in the Plan view, or right-click a task you've worked on and choose **Open the task's record**. A read-only page opens beside the editor, with the task's discussion, its design briefs and their chats, the checkpoints, the steps and how each went, and the handoff.
+  - **Show the epic brief and discussion** opens the epic's own page, with its component diagram.
+  - **Open this task's record** shows the task you're on, so its discussion stays readable once the steps start.
+  - The records last as long as the epic, across reloads, and go when you stop it or start a new task.
+
 ## 1.0.4
 
 - **Epics, for goals bigger than one task:** tick **Epic: split it into tasks** when you start. After the discussion, the model writes an **epic brief**: how the parts fit together, drawn as a component diagram, and 2–12 tasks, each one that runs end to end. Reply to it to change it, then **✓ Approve & start task 1**.
