@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.6
+
+- **Review checks the other end of new calls:** when the change uses something it doesn't define, such as a function, a message or command name, a JSON field or a test helper, the model looks it up, even outside the change, and flags it if it doesn't exist or doesn't do what the code expects. This matters most for tests: a test whose helper doesn't exist can time out with a misleading message, or pass without testing anything.
+
 ## 1.0.5
 
 - **Look back at an epic:** click a finished or skipped task in the Plan view, or right-click a task you've worked on and choose **Open the task's record**. A read-only page opens beside the editor, with the task's discussion, its design briefs and their chats, the checkpoints, the steps and how each went, and the handoff.
