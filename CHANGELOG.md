@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.8
+
+- **Reviews read several steps at once:** **Collect what's worth checking** and **Summarize the review** now read up to 3 steps at the same time, each extra one in a session of its own, so a long review fills in faster. Set how many with `guide.review.parallelReads` (1–5; 1 reads one step at a time). Each extra session costs a little more.
+- **Conversations stay put:** with a model API provider, starting a review no longer deletes the conversation of the task you're working on.
+
 ## 1.0.7
 
 - **Summarize the review:** **Summarize the review** (a button in the Review view's title bar, or the Command Palette) reads every step not read yet, then closes the review with a summary. It goes at the top of the **Worth checking** page and of **Export review**:
