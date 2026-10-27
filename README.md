@@ -87,7 +87,7 @@ Paste the service's key when asked; it is stored in your keychain and sent only 
 ## Your first task
 
 1. Open a folder, then choose **Start a task** in the Guide Coding view and say what you want to build.
-2. The model reads your code (read-only) and proposes a plan. For a bigger goal, the plan is split into **milestones**, each a slice that runs and shows something. The next milestone is planned only once you reach it, from the code as it is by then.
+2. The model reads your code (read-only) and proposes a plan. For a bigger goal, the plan is split into **milestones**, each a slice that runs and shows something. The next milestone is planned only once you reach it, from the code as it is by then. With several milestones, a **task overview** comes first: what the whole task builds, a diagram of the finished result and what each milestone adds. Ask about it or change it, then **✓ Start milestone 1**.
 3. The current step appears in the editor. **Type it yourself**, then choose **Check my work**: the model reviews what you changed.
 4. Stuck? Go one level further at a time:
    - **Hint**: the shape of the code

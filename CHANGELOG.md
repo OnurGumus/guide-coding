@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.9
+
+- **The task's big picture first:** when a task's plan has several milestones, the model writes a **task overview** before milestone 1's design brief: what the whole task builds, the key types its milestones share, a diagram of the finished result, what each milestone adds, and the trade-offs. It opens in the Task panel. Reply to ask about it or change it, then **✓ Start milestone 1**. **Show the task overview** (Plan view title menu) opens it again, and the task's record page shows it above the milestones. A task planned before this version has none and carries on as before.
+- **Reviews and tasks side by side, fixed** (model API providers):
+  - A review's extra reading sessions no longer stop a search the task is running when they close.
+  - The task's conversation is kept after a reload too, not only once the task has taken a turn. 1.0.8's "conversations stay put" did not yet hold right after a reload.
+  - The extra sessions' conversations are deleted when they close, and clearing a task deletes only its own conversations.
+
 ## 1.0.8
 
 - **Reviews read several steps at once:** **Collect what's worth checking** and **Summarize the review** now read up to 3 steps at the same time, each extra one in a session of its own, so a long review fills in faster. Set how many with `guide.review.parallelReads` (1–5; 1 reads one step at a time). Each extra session costs a little more.
