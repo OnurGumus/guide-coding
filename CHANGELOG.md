@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.12
+
+- **An epic may have up to 20 tasks:** the epic brief now takes 2–20 tasks, up from 2–12, so a bigger app no longer has two of its tasks merged to fit.
+
 ## 1.0.11
 
 - **A tool that hangs no longer stalls the guide:** when the model asks the advisor something, a tool the advisor calls could hang, such as a browser's, and the guide waited up to 30 minutes, even after a reload. Now:
