@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.0.11
+
+- **A tool that hangs no longer stalls the guide:** when the model asks the advisor something, a tool the advisor calls could hang, such as a browser's, and the guide waited up to 30 minutes, even after a reload. Now:
+  - **The advisor reads the web itself:** it has WebFetch and WebSearch for a package's documentation or source, so it no longer opens a browser for a public page. You approve each call, as you do its other calls.
+  - **A silent tool is cut off after a minute:** the advisor then answers another way. A `timeout` you set for a server in your MCP config, or `CLAUDE_CODE_MCP_TOOL_IDLE_TIMEOUT` in your environment, still applies.
+  - **Stop ends the advisor:** Stop, ending the task or reloading the window closes it, along with its tools and their browser.
+
+## 1.0.10
+
+- **The task overview shows what you will have:** it now opens with **When it's done**, a few lines on what using the finished result looks like: what to run, what you see, what you do. Each milestone says what works when it ends, not which parts it builds.
+- **A grid instead of the arc diagram:** **What it builds** is a table of the task's components against its milestones, ● where a milestone creates a component and ○ where it changes it, so you can see how the parts grow. The task's record page shows the same table.
+- **The milestones follow the overview you approved:** each milestone's design brief now sees the overview's interfaces and what every milestone delivers. The overview's types mark the parts a later milestone adds, e.g. `// milestone 5`.
+- An overview written before this version keeps its diagram.
+
 ## 1.0.9
 
 - **The task's big picture first:** when a task's plan has several milestones, the model writes a **task overview** before milestone 1's design brief: what the whole task builds, the key types its milestones share, a diagram of the finished result, what each milestone adds, and the trade-offs. It opens in the Task panel. Reply to ask about it or change it, then **✓ Start milestone 1**. **Show the task overview** (Plan view title menu) opens it again, and the task's record page shows it above the milestones. A task planned before this version has none and carries on as before.
