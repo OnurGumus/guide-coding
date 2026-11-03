@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.14
+
+- **A review step at a glance:** you read a dozen of these in a row, so each is now short. What a step does is 1–3 short sentences, and the first alone tells you. Why is one sentence, or none when it's already clear. Fewer technical terms, and nothing the diff already shows.
+- **A small sketch when it helps:** a review step may show a picture as code under its explanation: a before and after, a table of cases, a call chain across files, or how a new function is called. Most steps have none, and it never repeats the diff.
+- **Steps by number:** a review's explanations say "step 3", as the Review view does, never an internal id such as `s3`.
+
 ## 1.0.13
 
 - **Plainer words, code later:** a step's balloon, a review step's balloon, the review's intent and a brief's or overview's why now open with a sentence in everyday words, with no code in it. Names of types and functions come after, and only where you need one to find or type something. Reviews now follow the same writing rules as the guide.
