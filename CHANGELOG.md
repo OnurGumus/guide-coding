@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.13
+
+- **Plainer words, code later:** a step's balloon, a review step's balloon, the review's intent and a brief's or overview's why now open with a sentence in everyday words, with no code in it. Names of types and functions come after, and only where you need one to find or type something. Reviews now follow the same writing rules as the guide.
+- **No more steps the guide can't give you:** every step is now code you type. The guide no longer plans a step that only runs a formatter, an install or `terraform init`, or makes a commit, which stalled with no code to propose. A command you need is in the step that needs it, or in the checkpoint's **See it work**, and the commit stays in its **Suggested commit**.
+
 ## 1.0.12
 
 - **An epic may have up to 20 tasks:** the epic brief now takes 2–20 tasks, up from 2–12, so a bigger app no longer has two of its tasks merged to fit.
