@@ -113,6 +113,21 @@ To look back, click a finished task in the Plan view: its discussion, briefs, st
 
 Switch any time from the Guide Coding view's title bar, or with the `guide.mode` setting.
 
+### F# projects
+
+Install [FsiMcp](https://github.com/OnurGumus/FsiMcp) once (it needs the [.NET 10 SDK](https://dotnet.microsoft.com/download)):
+
+```sh
+dotnet tool install -g FsiMcp
+```
+
+In a folder with an `.fsproj`, the guide then checks your F# with the compiler:
+
+- **Check my work asks the compiler too.** The model sees the errors your change added since the step started, at `file:line`, and judges with them. Errors that were already there are only counted.
+- **A step's code is type-checked before you see it.** If it would add errors, the model fixes it first. The balloon then says **✓ type-checks**, or **⚠ won't build until a later step** when a later step adds what is missing.
+
+The compiler runs on your machine, and its build output goes to VS Code's storage, never into your project. To turn it off, set `guide.fsharp.lab` to `off`.
+
 ## Review a branch
 
 PRs have got too big to review well. **Review** reads what a branch adds over a base, proposes an order to read it in, and walks you through it. It helps you understand the change; you do the judging. It's read-only: it never writes to your files or your repository.
@@ -138,6 +153,7 @@ Guide Coding collects nothing and sends nothing to its author; it has no telemet
 
 - VS Code 1.101.2 or later (desktop).
 - A folder you trust, opened in VS Code. Untrusted and virtual workspaces are not supported, because the model reads your files.
+- Optional, for F# projects: the .NET 10 SDK and FsiMcp 0.3.0 or later.
 - An API key for one of the providers above, a local model through Ollama, or Claude Code signed in on this machine.
 
 ## Feedback

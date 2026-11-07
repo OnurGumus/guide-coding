@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.15
+
+- **F# checked by the compiler:** install FsiMcp once (`dotnet tool install -g FsiMcp`, .NET 10 SDK), and in a folder with an `.fsproj` the guide asks the F# compiler, on your machine:
+  - **Check my work** now gives the model the errors your change added since the step started, at `file:line`. Errors that were already there are only counted, and errors a later step will fix are fine.
+  - **A step's code is type-checked before you see it.** If it would add errors, the model fixes it first. The balloon says **✓ type-checks**, or **⚠ won't build until a later step**.
+  - Build output goes to VS Code's storage, never into your project. Without FsiMcp, outside F#, or with `guide.fsharp.lab` set to `off`, nothing changes.
+
 ## 1.0.14
 
 - **A review step at a glance:** you read a dozen of these in a row, so each is now short. What a step does is 1–3 short sentences, and the first alone tells you. Why is one sentence, or none when it's already clear. Fewer technical terms, and nothing the diff already shows.
