@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.19
+
+- **See the F# lab in action.** This page now shows the lab: running a snippet, measuring it, and ▶ Run to here. The intro also has a line for F# developers. No change to the extension itself.
+
 ## 1.0.18
 
 - **An `open` in the lab's Experiments keeps working after a reload.** Only Setup is replayed after a reload, so `open Program` in Experiments used to be gone, and the snippet below it failed with "not defined". Running a snippet now sends the `open` lines above it first.

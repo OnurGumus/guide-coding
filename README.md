@@ -12,6 +12,8 @@ Guide Coding is a VS Code extension that plans a coding task with the model of y
 - **Understanding is the goal.** You finish a task knowing why the code is the way it is, not only holding code that works.
 - **Generating code is a choice, not the default.** Show code, Preview and Apply are there when you want them, one level at a time.
 
+**F# developers:** the guide checks each step with the F# compiler, and [the lab](#the-lab) gives you F# Interactive beside your code, loaded with your project: run a snippet and the result shows inline.
+
 Your API key stays in your operating system's keychain and goes only to the provider you pick; nothing is sent to us. Want to try it without a key? Use a local model through Ollama, and nothing leaves your machine.
 
 > **Preview.** Guide Coding is an early release. It works, but expect rough edges. Please [tell us what breaks](#feedback).
@@ -135,6 +137,8 @@ The compiler runs on your machine, and its build output goes to VS Code's storag
 #### The lab
 
 The lab is a scratch F# file where you try code against your project while you work on a step.
+
+![The F# lab: ▶ Run a snippet and its result shows inline, ▶ Measure times it per call, and ▶ Run to here runs the experiments from the top and stops at the first failure](https://raw.githubusercontent.com/OnurGumus/guide-coding/main/images/fsharp-lab.gif)
 
 - **It loads itself when it's first needed**: at a task's first F# step (in the background), when the guide type-checks, or when you press ▶ Run. It also loads when the project appears mid-task in an empty folder. You don't have to run something first.
 - **Open it** with **Open lab**, in the Plan view's title menu or in the Task panel, while a task is on. It opens `lab.fsx` beside your code. There is one lab per task, and an epic's tasks share one. It lives in VS Code's storage, not in your repo. A new lab explains itself with three comment lines and a `[1..10] |> List.sum` example. If FsiMcp is missing or too old, Open lab shows the install or update command instead of an empty lab.
