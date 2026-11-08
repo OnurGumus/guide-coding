@@ -121,12 +121,29 @@ Install [FsiMcp](https://github.com/OnurGumus/FsiMcp) once (it needs the [.NET 1
 dotnet tool install -g FsiMcp
 ```
 
+F# mode needs FsiMcp 0.4.2, for the compile checks as well as the lab. If you have an older one, run `dotnet tool update -g FsiMcp`.
+
 In a folder with an `.fsproj`, the guide then checks your F# with the compiler:
 
 - **Check my work asks the compiler too.** The model sees the errors your change added since the step started, at `file:line`, and judges with them. Errors that were already there are only counted.
 - **A step's code is type-checked before you see it.** If it would add errors, the model fixes it first. The balloon then says **✓ type-checks**, or **⚠ won't build until a later step** when a later step adds what is missing.
 
-The compiler runs on your machine, and its build output goes to VS Code's storage, never into your project. To turn it off, set `guide.fsharp.lab` to `off`.
+- **A step it couldn't check says why.** Its balloon shows **○ not compiler-checked:** and the reason: a project it depends on doesn't build yet, the check took longer than 10 s, the F# lab was busy, or fsi-mcp gave an error. Compile checks work while an F# project you depend on doesn't build yet: referenced F# projects are checked from source.
+
+The compiler runs on your machine, and its build output goes to VS Code's storage, never into your project. To turn it all off, set `guide.fsharp.lab` to `off`.
+
+#### The lab
+
+The lab is a scratch F# file where you try code against your project while you work on a step.
+
+- **It loads itself when it's first needed**: at a task's first F# step (in the background), when the guide type-checks, or when you press ▶ Run. It also loads when the project appears mid-task in an empty folder. You don't have to run something first.
+- **Open it** with **Open lab**, in the Plan view's title menu or in the Task panel, while a task is on. It opens `lab.fsx` beside your code. There is one lab per task, and an epic's tasks share one. It lives in VS Code's storage, not in your repo. A new lab explains itself with three comment lines and a `[1..10] |> List.sum` example. If FsiMcp is missing or too old, Open lab shows the install or update command instead of an empty lab.
+- **Setup and Experiments.** The **Setup** section is replayed after every reload. **Experiments** run only when you ask.
+- **▶ Run** above a snippet runs it. So does **Ctrl+Alt+Enter**, on the snippet at the cursor, or on the selection. The result shows inline after the snippet, and hovering shows the full output. A slow or allocation-heavy run adds `[time · bytes · GCs · Debug · Workstation GC]`.
+- **▶ Measure** on an experiment gives time and allocations per call, like `[1.2 µs/call · 480 B/call · …]`. Use it to compare two versions of small code. It takes a few seconds.
+- **↻ Reload** rebuilds your project and replays Setup. The lab tells you when your code changed since it was loaded, when Setup broke, when Setup is slow, and when the session restarted.
+- **The guide sees your runs** and can suggest a snippet. **➕ Add to lab** in the step's balloon adds it to Experiments, and you run it.
+- **The guide can run code in your lab session** with `fsi_eval`, but it asks you first: **Run** for this one, or **Allow for this task** so it doesn't ask again. If you decline, it doesn't ask again that turn. Type-checking needs no question.
 
 ## Review a branch
 
@@ -153,7 +170,7 @@ Guide Coding collects nothing and sends nothing to its author; it has no telemet
 
 - VS Code 1.101.2 or later (desktop).
 - A folder you trust, opened in VS Code. Untrusted and virtual workspaces are not supported, because the model reads your files.
-- Optional, for F# projects: the .NET 10 SDK and FsiMcp 0.3.0 or later.
+- Optional, for F# projects: the .NET 10 SDK and FsiMcp 0.4.2 or later.
 - An API key for one of the providers above, a local model through Ollama, or Claude Code signed in on this machine.
 
 ## Feedback
