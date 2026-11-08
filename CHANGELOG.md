@@ -1,16 +1,21 @@
 # Changelog
 
+## 1.0.17
+
+- **F# mode works without manual steps.** Needs FsiMcp 0.4.2 (`dotnet tool update -g FsiMcp`).
+  - **Compile checks work while an F# project you depend on doesn't build yet:** referenced F# projects are checked from source.
+  - **The lab loads itself:** at a task's first F# step (in the background), when the guide type-checks, or when you ▶ Run, and when the project appears mid-task in an empty folder.
+  - **A step that couldn't be compiler-checked says why** in its balloon: `○ not compiler-checked: …` (a project it depends on doesn't build yet, the check took longer than 10 s, the F# lab was busy, or fsi-mcp gave an error).
+  - **A new lab explains itself** with three comment lines and a `[1..10] |> List.sum` example, and Open lab checks FsiMcp first: missing or too old, it shows the install or update command instead of an empty lab.
+
 ## 1.0.16
 
-- **An F# lab to try code in:** needs FsiMcp 0.4.2 (`dotnet tool update -g FsiMcp`), and so do the compile checks from 1.0.15 now. Compile checks now work while an F# project you depend on doesn't build yet (referenced F# projects are checked from source). In a folder with an `.fsproj`, **Open lab** (Plan view title menu, Task panel) opens `lab.fsx` beside your code, one per task (an epic's tasks share one), in VS Code's storage and not your repo.
+- **An F# lab to try code in:** needs FsiMcp 0.4.0 (`dotnet tool update -g FsiMcp`), and so do the compile checks from 1.0.15 now. In a folder with an `.fsproj`, **Open lab** (Plan view title menu, Task panel) opens `lab.fsx` beside your code, one per task (an epic's tasks share one), in VS Code's storage and not your repo.
   - **Setup and Experiments:** Setup is replayed after every reload. Experiments run on demand.
   - **▶ Run** above a snippet, or **Ctrl+Alt+Enter** on the snippet at the cursor or the selection. The result shows inline, with the full output on hover, and slow or allocation-heavy runs add time, bytes and GCs.
   - **▶ Measure** gives time and allocations per call, for comparing two versions of small code.
   - **↻ Reload** rebuilds your project and replays Setup. The lab says when your code changed, when Setup broke or is slow, and when the session restarted.
   - **The guide works with it:** it sees your runs and can suggest a snippet, which **➕ Add to lab** puts in Experiments. It can run code in your lab session with `fsi_eval` only after you choose **Run** or **Allow for this task** (which stops it asking again). Type-checking needs no question.
-  - **It loads itself:** at a task's first F# step (in the background), when the guide type-checks, or when you ▶ Run, and when the project appears mid-task in an empty folder.
-  - **A step that couldn't be compiler-checked says why** in its balloon: `○ not compiler-checked: …` (a project it depends on doesn't build yet, the check took longer than 10 s, the F# lab was busy, or fsi-mcp gave an error).
-  - **A new lab explains itself** with three comment lines and a `[1..10] |> List.sum` example, and Open lab checks FsiMcp first: missing or too old, it shows the install or update command instead of an empty lab.
   - Set `guide.fsharp.lab` to `off` to turn it off.
 - **Fewer Claude Code version notices:** Claude Code updates almost daily, and each update brought back "Claude Code X is newer than the version Guide Coding was tested with". Now it shows once per minor version (2.1.x, then 2.2.x), and Guide Coding is tested with Claude Code 2.1.319.
 
