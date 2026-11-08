@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.18
+
+- **An `open` in the lab's Experiments keeps working after a reload.** Only Setup is replayed after a reload, so `open Program` in Experiments used to be gone, and the snippet below it failed with "not defined". Running a snippet now sends the `open` lines above it first.
+- **▶ Run to here** on a lab experiment runs every experiment from the first one down to it, each with its own result, and stops at the first one that fails.
+
 ## 1.0.17
 
 - **F# mode works without manual steps.** Needs FsiMcp 0.4.2 (`dotnet tool update -g FsiMcp`).
