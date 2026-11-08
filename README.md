@@ -32,11 +32,14 @@ Guide Coding runs on your own model account. On first run, choose **Choose provi
 | `anthropic` | api.anthropic.com (Claude models) | an Anthropic Console API key |
 | `openai` | api.openai.com | an OpenAI API key; you pick the model at setup |
 | `openrouter` | openrouter.ai, and the vendor of the model you pick | an OpenRouter key; you pick the model at setup |
+| `opencodeGo` | opencode.ai, and the vendor of the model you pick | the API key of your OpenCode Go plan; you pick the model at setup |
+| `opencodeZen` | opencode.ai, and the vendor of the model you pick | an OpenCode API key with Zen credits; you pick the model at setup |
 | `ollama` | nowhere: the model runs on your machine (localhost:11434) | no key; you pick one of your installed models |
 | `custom` | the endpoint in `guide.baseUrl` | optional: a local server such as LM Studio takes no key |
 | `claudeCodeCli` | Anthropic, through your own Claude Code | Claude Code installed and signed in: your Claude plan or a key ([below](#claude-code-your-installation)) |
 
 - **Anthropic with Claude Max or Team.** Have Claude Max or Team? Your plan includes monthly API credits (Max 5x $100, Max 20x $200, Team up to $500 pooled). Claim them in claude.ai under Settings → Billing by linking a Claude Console organization, create an API key in that organization, and choose Anthropic. (Pro, Free and Enterprise plans don't include these credits.) [Details](https://support.claude.com/en/articles/17154008-api-credits-for-max-and-team-plans).
+- **OpenCode Go and Zen.** Get the key in the [OpenCode console](https://opencode.ai/console). Setup lists the models OpenCode serves on the Chat Completions API, such as GLM, Kimi, DeepSeek, MiniMax and MiMo. Claude, GPT, Grok and Gemini models aren't listed, and neither are OpenCode's free models, which work only in OpenCode itself. For Claude or GPT, choose Anthropic or OpenAI.
 - **Ollama and context length.** Ollama's default context is 4k tokens on machines with less than 24 GiB of VRAM, and it silently cuts long prompts from the front. Guide Coding needs at least 32k. Raise it with the Ollama app's context slider, or set `OLLAMA_CONTEXT_LENGTH` (64k, `65536`, is a good choice for coding tools). Pick a model that can call tools, for example `ollama pull qwen3-coder`.
 - **Cost.** For a model whose price is known (Anthropic's, DeepSeek's) the cost is shown in dollars, and the task pauses at `guide.maxTaskCostUsd` (default 5). For any other model, each turn's tokens are written to the log instead.
 
@@ -89,7 +92,7 @@ Paste the service's key when asked; it is stored in your keychain and sent only 
 ## Your first task
 
 1. Open a folder, then choose **Start a task** in the Guide Coding view and say what you want to build.
-2. The model reads your code (read-only) and proposes a plan. For a bigger goal, the plan is split into **milestones**, each a slice that runs and shows something. The next milestone is planned only once you reach it, from the code as it is by then. With several milestones, a **task overview** comes first: what using the finished result looks like, a grid of which milestone builds or changes each part, and what works when each milestone ends. Ask about it or change it, then **✓ Start milestone 1**.
+2. The model reads your code (read-only) and proposes a plan. For a bigger goal, the plan is split into **milestones**, each a slice that runs and shows something. The next milestone is planned only once you reach it, from the code as it is by then. With several milestones, a **task overview** comes first: what using the finished result looks like, a grid of which milestone builds or changes each part, and what works when each milestone ends. Ask about it or change it, then **✓ Start milestone 1**. Every brief, from the epic's down to each milestone's, states its **behaviour** as Gherkin Features and Rules (no Scenarios): the epic names the major capabilities, the task overview gives their key rules, and each milestone the rules it makes true.
 3. The current step appears in the editor. **Type it yourself**, then choose **Check my work**: the model reviews what you changed.
 4. Stuck? Go one level further at a time:
    - **Hint**: the shape of the code
@@ -104,7 +107,7 @@ You own the plan: edit, skip, reorder, add and delete steps, and the model adapt
 
 ### Epics, for bigger goals
 
-When a goal holds several separate features, or would take more than one session, tick **Epic: split it into tasks** when you start. After the discussion, the model writes an **epic brief**, with a diagram of how the parts fit together and the tasks that build them. Once you approve it, the tasks run one at a time, each an ordinary task in a fresh session. At the end of each task, the model writes a **handoff** for the tasks after it, and **Start task N** opens the next one. You own the task list just as you own the steps: edit, move, skip or add tasks in the Plan view.
+When a goal holds several separate features, or would take more than one session, tick **Epic: split it into tasks** when you start. After the discussion, the model writes an **epic brief**, with a C4 container diagram of how the parts fit together (who uses the app, its containers, stores and external systems) and the tasks that build them. Once you approve it, the tasks run one at a time, each an ordinary task in a fresh session. At the end of each task, the model writes a **handoff** for the tasks after it, and **Start task N** opens the next one. You own the task list just as you own the steps: edit, move, skip or add tasks in the Plan view.
 
 To look back, click a finished task in the Plan view: its discussion, briefs, steps and handoff open as a read-only page, and **Show the epic brief and discussion** does the same for the epic.
 

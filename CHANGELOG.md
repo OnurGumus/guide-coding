@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.0.21
+
+- **The epic brief draws a C4 container view.** It shows who uses the app, its containers, its stores and the external systems it calls. Each part shows its kind and what it runs on, a dashed boundary marks the system, and each link is numbered, with its label listed under the drawing so labels never overlap. An epic brief written before this version keeps its old diagram.
+- **Sequence diagrams show who is busy.** Calls are numbered, a return that brings back a value that matters is drawn dashed, and a bar on each lifeline runs from a call to its return. This applies to design briefs and to a review's big picture.
+- **The Task panel and the task's page show the same diagram**, in the panel with your theme's colours.
+- **Briefs state their behaviour as Gherkin.** The epic brief, the task overview and each milestone's brief have a **Behaviour** section with Features and Rules, and no Scenarios. The epic names its 2–6 major capabilities, each with its 1–3 headline rules. The task overview reuses those feature names and gives their key rules. A milestone lists only the rules it makes true, or none for plumbing. A lower brief refines the rules above it and never contradicts them. Discuss or change them like the rest of the brief.
+
+## 1.0.20
+
+- **OpenCode Go and OpenCode Zen are providers.** Choose one, paste your OpenCode API key, and pick a model from OpenCode's list. No settings to edit.
+
 ## 1.0.19
 
 - **See the F# lab in action.** This page now shows the lab: running a snippet, measuring it, and ▶ Run to here. The intro also has a line for F# developers. No change to the extension itself.
