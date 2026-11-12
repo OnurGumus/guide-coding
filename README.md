@@ -157,7 +157,7 @@ The lab is a scratch F# file where you try code against your project while you w
 
 PRs have got too big to review well. **Review** reads what a branch adds over a base, proposes an order to read it in, and walks you through it. It helps you understand the change; you do the judging. It's read-only: it never writes to your files or your repository.
 
-1. Check out the branch (for a GitHub PR, `gh pr checkout 123`), then choose **Start a review** in the **Review** view, under Plan.
+1. Check out the branch (for a GitHub PR, `gh pr checkout 123`), then choose **Start a review** in the **Review** view, under Plan. Or skip the checkout: pick **A pull request…** and type its number (`#973`). The review then covers exactly that PR, merged or open, whatever you have checked out. This needs the [GitHub CLI](https://cli.github.com) (`gh`), and the PR's commits in your repository (`git fetch` first if they aren't).
 2. Pick the base: the default branch is offered first, or enter any branch, tag or commit. The review covers what the branch adds over it, like a PR. Uncommitted changes aren't included.
 3. **Start from the intent.** Optionally add the PR description or ticket, from the clipboard or typed. The review opens with what the change sets out to do, and where the code does more, or less, than the description says.
 4. The model groups the changes into **milestones** of **steps** in reading order: types and contracts first, then the code, the callers and the tests, with mechanical changes such as renames on their own. Every change is in exactly one step, so nothing is skipped by accident.

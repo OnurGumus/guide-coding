@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.22
+
+- **Review a pull request by its number.** In "What to review", choose **A pull request…** and type `#973`. The review covers exactly that PR, whatever you have checked out: no checkout, no worktree.
+  - A merged PR is reviewed as what its merge brought in. An open one, as everything it adds over the branch it targets.
+  - This needs the [GitHub CLI](https://cli.github.com) (`gh`), which is asked once, read-only. Nothing is fetched: if the PR's commits aren't in your repository yet, the message says what to `git fetch`.
+  - "What it's for" offers the PR's own title and description first.
+  - A PR merged by rebase has no single merge commit, so only its last commit is reviewed. Use **Since a branch, tag or commit…** for those.
+
 ## 1.0.21
 
 - **The epic brief draws a C4 container view.** It shows who uses the app, its containers, its stores and the external systems it calls. Each part shows its kind and what it runs on, a dashed boundary marks the system, and each link is numbered, with its label listed under the drawing so labels never overlap. An epic brief written before this version keeps its old diagram.
