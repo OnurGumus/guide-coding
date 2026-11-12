@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.24
+
+- **Serious findings get a second look.** During **Collect what's worth checking** and **Summarize the review**, a separate session that never saw a finding being made tries to disprove it: what would make this harmless? Then it looks for exactly that. A finding it rules out drops to minor and says why, one that survives says it held up, and the summary leaves out what was ruled out. This costs one extra turn for each step that has a serious finding.
+- **A finding marked likely to break names two places.** Where the bad input comes in, and where the harm happens, each as `file:line`. With only one, the model has to ask it as a question instead.
+- **A value is followed to where it is used.** Before the model says a bad value gets through, it searches the whole repository for everything that reads it, and says what happens there. When nothing reads it, the finding is unused data, not a bug.
+- **Comments and TODOs are quoted.** The model reads the doc comment and any TODO around what it reports, and quotes them.
+- **Fix:** the Worth checking page could stay out of date when several updates arrived close together.
+
 ## 1.0.23
 
 - **A pull request's review says what it is and where it goes.** Its header reads `#973 Round the results into develop` instead of `#973 → develop`, and in **About this review** it links to the PR on GitHub.
