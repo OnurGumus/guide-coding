@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.23
+
+- **A pull request's review says what it is and where it goes.** Its header reads `#973 Round the results into develop` instead of `#973 → develop`, and in **About this review** it links to the PR on GitHub.
+- **The merge commit is counted apart.** A merged PR reviewed up to its merge commit says `4 commits + merge`, not `5 commits`.
+
 ## 1.0.22
 
 - **Review a pull request by its number.** In "What to review", choose **A pull request…** and type `#973`. The review covers exactly that PR, whatever you have checked out: no checkout, no worktree.
