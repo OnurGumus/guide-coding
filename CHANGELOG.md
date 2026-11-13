@@ -1,11 +1,15 @@
 # Changelog
 
+## 1.0.26
+
+- **A tour's why is the author's, where the code gives it.** The model reads the comments around a step's lines and quotes the reason they give. It names the choices the lines show, such as a library or a pattern, and what each gives there. Where nothing says why, it says so. The tour's opening answer names the libraries and patterns the flow is built on.
+- **Fix:** a tour that included a new file git doesn't track yet stopped with "changed while the tour was being planned". A new file is no longer taken for changed, and its step opens the real file.
+
 ## 1.0.25
 
 - **Take a tour of the code:** ask how something works, for example "Where is the budget checked?", in the new **Tours** view, under Review.
   - **The answer comes first:** the model answers your question in a few sentences, then gives an order to read the code in, as steps of a few lines each.
   - **Each step opens where its code is,** and its balloon says what the lines do and why. Ask about a step, mark it read, and write notes on any line.
-  - **The why is the author's, where the code gives it:** the model reads the comments around the lines and quotes the reason they give, and names the choices the lines show, such as a library or a pattern, and what each gives there. Where nothing says why, it says so.
   - **Export tour** opens the whole tour, with your notes, as Markdown in an untitled document: an onboarding page for the next person.
   - **A tour is pinned to the commit it was made at,** so its line numbers never move. A file changed since opens as it was. **Tour again** asks the same question of the code as it is now, and the old tour stays.
   - **Uncommitted changes are included** through a snapshot, saved as git objects. Your files, the index and your branches are left as they are.
