@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.0.25
+
+- **Take a tour of the code:** ask how something works, for example "Where is the budget checked?", in the new **Tours** view, under Review.
+  - **The answer comes first:** the model answers your question in a few sentences, then gives an order to read the code in, as steps of a few lines each.
+  - **Each step opens where its code is,** and its balloon says what the lines do and why. Ask about a step, mark it read, and write notes on any line.
+  - **The why is the author's, where the code gives it:** the model reads the comments around the lines and quotes the reason they give, and names the choices the lines show, such as a library or a pattern, and what each gives there. Where nothing says why, it says so.
+  - **Export tour** opens the whole tour, with your notes, as Markdown in an untitled document: an onboarding page for the next person.
+  - **A tour is pinned to the commit it was made at,** so its line numbers never move. A file changed since opens as it was. **Tour again** asks the same question of the code as it is now, and the old tour stays.
+  - **Uncommitted changes are included** through a snapshot, saved as git objects. Your files, the index and your branches are left as they are.
+  - **Read-only:** the model never changes your files, and git is only read, apart from that snapshot.
+  - **Tours are kept,** newest first, each with its own session and cost.
+
 ## 1.0.24
 
 - **Serious findings get a second look.** During **Collect what's worth checking** and **Summarize the review**, a separate session that never saw a finding being made tries to disprove it: what would make this harmless? Then it looks for exactly that. A finding it rules out drops to minor and says why, one that survives says it held up, and the summary leaves out what was ruled out. This costs one extra turn for each step that has a serious finding.

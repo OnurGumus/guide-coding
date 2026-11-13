@@ -170,6 +170,21 @@ PRs have got too big to review well. **Review** reads what a branch adds over a 
 
 Reviews are kept per branch, so you can stop and come back. When the branch gets new commits, **Review the new commits** reviews just those. Generated files (lockfiles, `dist/`, minified files), binary files and protected files such as `.env` are listed for you, but never sent to the model. Git is only ever run to read: Guide Coding never fetches, checks out or commits.
 
+## Take a tour
+
+New to a codebase, or to one part of it? Ask how something works, and **a tour** shows you where the answer is, in the order to read it. Like a review, it's read-only: you never type, apply or check anything, the model never changes your files, and git is only read. The one exception: a tour of uncommitted changes saves a snapshot of them as git objects, and your files, the index and your branches are left as they are.
+
+1. Choose **Start a tour** in the **Tours** view, under Review, and type your question, for example "How does a step get applied?" or "Where is the budget checked?". If you have code selected, you can start from it. It's a hint: the tour may start elsewhere.
+2. **The answer comes first.** The model searches the code, answers your question in a few sentences, and gives a reading order: **milestones** made of **steps**, each a few ranges of lines. **The answer**, at the top of the tour, opens **About this tour**.
+3. **Each step opens where its code is,** with its lines marked by a blue bar. The balloon says what the lines do and why they're written that way: the reason a comment gives, in the author's words, and the choices the lines show, such as a library or a pattern. Where the code doesn't say why, the balloon says so. **‹ ›** moves between the step's ranges. Ask the model about the step, or save your text as a note on it.
+4. **Mark read** opens the next unread step. The view counts what you've read (`8/14 read`), and you can open any step in any order.
+5. **Write notes on any line** of the tour's files with the comment "+" in the gutter. Start one with `question:`, `issue:` or `nit:` to label it.
+6. **Export tour** opens the whole tour as Markdown in a new untitled document: the question, the answer, each step with its ranges and explanation, and your notes. Steps not explained yet are explained first. Nothing is saved until you save it, so it's ready to hand to the next person.
+
+**A tour is pinned to the commit it was made at,** so its line numbers never move. Uncommitted changes are included: the tour is made from a snapshot of them, and the view says "Includes your uncommitted changes". Your files, the index and your branches are left as they are. When a file changes after the tour was made, its steps open the file as it was, and the balloon offers **Open the current file**. The view says how many of the tour's files have changed since, and **Tour again** (right-click the tour) asks the same question of the code as it is now. The old tour stays and keeps working. If its commit is gone (a snapshot git has since cleaned up), the tour says so, and you can still export it, tour again or delete it.
+
+Tours are kept, newest first: click one to open it again. Each has its own session and cost (`guide.maxTaskCostUsd` applies to each), and **Delete the tour** removes one. Generated, binary and protected files such as `.env` are never part of a tour, and the model can't read protected ones at all.
+
 ## Privacy
 
 Guide Coding collects nothing and sends nothing to its author; it has no telemetry. Your goal, the files the model reads, the diff of your changes when you Check, and your messages go only to the model provider you chose, under that provider's terms (with Ollama they stay on your machine; with Claude Code (your installation), to Anthropic through your own Claude Code, under your account's terms). The model can read your workspace but cannot change it: only your Apply and Create file write, and a path guard keeps it out of anything outside the folder and secrets such as `.env*`, `*.pem` and `.ssh`. Your keys live in your keychain, and the task and its conversation in VS Code's workspace storage on your machine. Read the full [PRIVACY.md](PRIVACY.md); the terms of use are in the [EULA.md](EULA.md).
