@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.28
+
+- **Steadier under the hood.** No change to the extension itself: Guide Coding's own test suite and its model evaluation were brought up to date with the design brief flow and the tour, so changes to the guide are measured before they reach you.
+
 ## 1.0.27
 
 - **A question when you finish a part of a tour.** When Mark read finishes a milestone of two steps or more (or a tour's only one), the model asks you one question that needs the whole milestone to answer. Type your answer in your own words in the balloon: the reply says whether it holds and what's missing and, when a step shows what's missing, a **See step** link to it. **Skip** moves on to the next unread step, and nothing waits for the question. It's never a score, and **Export tour** leaves it out. Turn it off with `guide.tour.questions`.
