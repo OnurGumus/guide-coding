@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.27
+
+- **A question when you finish a part of a tour.** When Mark read finishes a milestone of two steps or more (or a tour's only one), the model asks you one question that needs the whole milestone to answer. Type your answer in your own words in the balloon: the reply says whether it holds and what's missing and, when a step shows what's missing, a **See step** link to it. **Skip** moves on to the next unread step, and nothing waits for the question. It's never a score, and **Export tour** leaves it out. Turn it off with `guide.tour.questions`.
+- **Tour from here** starts a tour at the lines you're reading, with "How does this part work?" filled in as the question. It's on a selection's right-click menu in the editor, in a task step's balloon, and in a review step's balloon and right-click menu while the reviewed commit is checked out.
+
 ## 1.0.26
 
 - **A tour's why is the author's, where the code gives it.** The model reads the comments around a step's lines and quotes the reason they give. It names the choices the lines show, such as a library or a pattern, and what each gives there. Where nothing says why, it says so. The tour's opening answer names the libraries and patterns the flow is built on.
