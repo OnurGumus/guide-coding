@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.29
+
+- **Tours explain, where they used to state.** Each step now defines the terms it needs, such as a library or a pattern, and gives the mechanism behind every "so" and "because". It gives the reason itself where it used to point at a comment or a later step. Explanations may be longer when the code needs it.
+- **Tour diagrams show what really happens.** A milestone's diagram now covers every call its steps show, with the path that fails or times out, the repeats, and the writes to storage. An arrow can carry a note saying what happens there, and the step that shows it. Diagrams are in colour and read the same in a light and a dark theme.
+- **Open Diagram Full Size** opens a milestone's diagram in your browser: from **Diagram full size** in a step's balloon, from the milestone's menu in the Tours view, or from the Command Palette.
+- **Export tour** lists the diagram's notes under it.
+- Tours made before this version keep their diagrams as they were.
+
 ## 1.0.28
 
 - **Steadier under the hood.** No change to the extension itself: Guide Coding's own test suite and its model evaluation were brought up to date with the design brief flow and the tour, so changes to the guide are measured before they reach you.
