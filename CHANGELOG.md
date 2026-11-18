@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.30
+
+- **Read a tour's step aloud.** A step's balloon has **Read aloud** once the step is explained: it reads the step's title, what it does and why, in your computer's own voice, so you can listen while you look at the code. Click it again, or **Stop reading** in the status bar, to stop. It also stops when you open another step.
+  - Code names are said as words, and a code block is skipped.
+  - Nothing is sent anywhere for it: it uses `say` on macOS, the built-in Windows voice, and `spd-say` or `espeak` on Linux. It has been run on macOS only so far.
+  - `guide.readAloud.voice` chooses the voice and `guide.readAloud.speed` how fast it speaks (0.5 to 2).
+
 ## 1.0.29
 
 - **Tours explain, where they used to state.** Each step now defines the terms it needs, such as a library or a pattern, and gives the mechanism behind every "so" and "because". It gives the reason itself where it used to point at a comment or a later step. Explanations may be longer when the code needs it.
