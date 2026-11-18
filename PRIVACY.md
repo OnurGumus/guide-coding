@@ -8,6 +8,7 @@ Guide Coding collects no data. It sends nothing to its author, and it has no tel
 - **API keys** are stored in your operating system's keychain (VS Code SecretStorage). Each key is sent only to its own provider.
 - **The task** (its plan, its steps and snapshots of each step's files) **and its conversations** are stored in VS Code's workspace storage on your machine, and are deleted when the task is cleared.
 - **The Guide log** (the Output panel) stays on your machine.
+- **Read aloud** reads on your machine, with your computer's voice or the natural voice. The natural voice is downloaded only when you run **Guide: Download the Natural Voice**: its files come from the npm registry (registry.npmjs.org) and Hugging Face (huggingface.co), which see an ordinary download request from your computer. Nothing of yours is sent to them, and the text it reads never leaves your machine.
 
 ## Questions
 

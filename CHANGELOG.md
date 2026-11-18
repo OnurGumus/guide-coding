@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.0.31
+
+- **A natural voice for Read aloud.** Run **Guide: Download the Natural Voice** once (about 445 MB) and Read aloud reads tour steps in a natural-sounding voice instead of your computer's own.
+  - Nothing downloads unless you run the command, and it asks first. You can cancel while it downloads.
+  - Every file is checked against a fixed fingerprint before it is used. A file that doesn't match is refused, and nothing is kept.
+  - It runs on your computer: the text it reads is never sent anywhere.
+  - `guide.readAloud.naturalVoice` picks one of nine English voices, American or British. `guide.readAloud.engine` switches back to your computer's voice. **Guide: Remove the Natural Voice** frees the space.
+  - If the natural voice fails, your computer's voice reads instead.
+  - It is open-source software under its own licences, listed in `THIRD_PARTY_NOTICES.md`.
+  - It has been run on macOS only so far.
+- **Fix:** the `guide.readAloud.voice` setting's description said an empty value uses the voice chosen in System Settings. On macOS it doesn't: name the voice, for example `Daniel`.
+
 ## 1.0.30
 
 - **Read a tour's step aloud.** A step's balloon has **Read aloud** once the step is explained: it reads the step's title, what it does and why, in your computer's own voice, so you can listen while you look at the code. Click it again, or **Stop reading** in the status bar, to stop. It also stops when you open another step.
